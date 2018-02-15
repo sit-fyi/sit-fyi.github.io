@@ -1,0 +1,88 @@
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+<link rel="import" href="/bower_components/app-layout/app-layout.html">
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+
+
+<dom-module id="sit-home">
+  <template>
+
+    <style>
+      app-header {
+        background-color: darkseagreen;
+        color: #fff;
+      }
+
+      app-drawer {
+        background-color: darkseagreen;
+      }
+
+      #logo {
+        width: 20vw;
+      }
+
+      #screenshot {
+        width: 50vw;
+      }
+
+
+      @media only screen and (max-width: 600px) {
+        #logo {
+          width: 80vw;
+        }
+        #screenshot {
+          width: 80vw;
+        }
+
+      }
+
+      center {
+        width: 100%;
+      }
+
+      paper-button.download {
+        background: skyblue;
+      }
+
+      #download-link {
+        text-decoration: none;
+      }
+
+    </style>
+
+    <app-drawer-layout>
+      <app-header-layout>
+        <app-header slot="header">
+          <app-toolbar>
+            <div main-title>SIT Issue tracker</div>
+            <a href="/doc">Docs</a>
+          </app-toolbar>
+      </app-header-layout>
+      </app-header>
+
+      <center>
+        <h1>SIT</h1>
+        <h2>Issue Tracker</h2>
+        <img id="logo" src="/images/sit.svg">
+      </center>
+
+      <center>
+          <h3>SCM-agnostic, offline-first, infinitely customizable</h3>
+          <div style="margin-bottom: 5vh">
+            <img id="screenshot" src="https://github.com/sit-it/sit/raw/master/doc/webui_example.png">
+          </div>
+          <paper-button class="download" raised><a id="download-link" href="https://github.com/sit-it/sit">Download</a></paper-button>
+      </center>
+
+
+    </app-drawer-layout>
+
+
+  </template>
+  <script>
+    class SitHome extends Polymer.Element {
+      static get is() { return 'sit-home'; }
+    }
+
+    window.customElements.define(SitHome.is, SitHome);
+  </script>
+</dom-module>

@@ -1,0 +1,36 @@
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+<link rel="import" href="/bower_components/app-route/app-location.html">
+<link rel="import" href="/bower_components/app-route/app-route.html">
+
+<link rel="import" href="../sit-doc/sit-doc.html">
+<link rel="import" href="../sit-home/sit-home.html">
+
+<dom-module id="sit-website">
+        <template>
+                <app-location route="{{ route }}"></app-location>
+
+                <app-route route="{{route}}" pattern="/" active="{{ homeActive }}"> </app-route>
+                <app-route route="{{route}}" pattern="/doc" active="{{ docActive }}"> </app-route>
+                <app-route route="{{route}}" pattern="/doc/:page" data="{{ doc }}" active="{{ docPageActive }}"> </app-route>
+
+                <template is="dom-if" if="[[ homeActive ]]">
+                        <sit-home></sit-home>
+                </template>
+
+                <template is="dom-if" if="[[ docActive ]]">
+                        <sit-doc page="getting_started.md"></sit-doc>
+                </template>
+
+                <template is="dom-if" if="[[ docPageActive ]]">
+                        <sit-doc page="[[ doc.page ]]"></sit-doc>
+                </template>
+
+        </template>
+        <script>
+                class SitWebsite extends Polymer.Element {
+                        static get is() { return 'sit-website'; }
+                }
+
+                window.customElements.define(SitWebsite.is, SitWebsite);
+        </script>
+</dom-module>

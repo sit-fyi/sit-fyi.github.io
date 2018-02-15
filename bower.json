@@ -1,0 +1,36 @@
+{
+  "name": "sit-it.github.io",
+  "authors": [
+    "Yurii Rashkovskii <yrashk@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^2.5.0",
+    "webcomponentsjs": "^1.1.0",
+    "bower": "*",
+    "install": "^1.0.4",
+    "iron-ajax": "^2.1.1",
+    "app-route": "PolymerElements/app-route#^2.0.3",
+    "marked-element": "^2.3.3",
+    "app-layout": "^2.0.5",
+    "paper-card": "PolymerElements/paper-card#^2.0.0",
+    "iron-flex-layout": "^2.0.3",
+    "prism-element": "^2.0.1",
+    "paper-button": "^2.0.0",
+    "paper-icon-button": "^2.1.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0"
+  }
+}
