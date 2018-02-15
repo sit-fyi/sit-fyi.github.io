@@ -23,6 +23,12 @@
         max-width: 768px;
       }
 
+      @media screen and (min-width: 768px) {
+        #doc {
+          margin-left: 10pt;
+        }
+      }
+
     </style>
 
     <iron-ajax auto url="[[ tocUrl ]]" handle-as="text" last-response="{{ toc }}">
