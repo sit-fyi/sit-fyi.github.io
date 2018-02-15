@@ -10,25 +10,37 @@
                 <app-location route="{{ route }}"></app-location>
 
                 <app-route route="{{route}}" pattern="/" active="{{ homeActive }}"> </app-route>
-                <app-route route="{{route}}" pattern="/doc" active="{{ docActive }}"> </app-route>
-                <app-route route="{{route}}" pattern="/doc/:page" data="{{ doc }}" active="{{ docPageActive }}"> </app-route>
+                <app-route route="{{route}}" pattern="/doc" tail="{{ docTail }}" active="{{ docActive }}"> </app-route>
 
                 <template is="dom-if" if="[[ homeActive ]]">
                         <sit-home></sit-home>
                 </template>
 
                 <template is="dom-if" if="[[ docActive ]]">
-                        <sit-doc page="getting_started.md"></sit-doc>
-                </template>
-
-                <template is="dom-if" if="[[ docPageActive ]]">
-                        <sit-doc page="[[ doc.page ]]"></sit-doc>
+                        <sit-doc page="[[ docPage ]]"></sit-doc>
                 </template>
 
         </template>
         <script>
                 class SitWebsite extends Polymer.Element {
                         static get is() { return 'sit-website'; }
+
+                        static get properties() {
+                                return {
+                                        docTail: {
+                                                type: Object,
+                                        },
+                                        docPage: {
+                                                type: String,
+                                                computed: 'getDocPage(docTail)'
+                                        }
+                                }
+                        }
+
+                        getDocPage(docTail) {
+                                return (docTail.path || "/getting_started.md").replace(/^\//, "");
+                        }
+
                 }
 
                 window.customElements.define(SitWebsite.is, SitWebsite);
