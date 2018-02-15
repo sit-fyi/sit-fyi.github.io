@@ -35,11 +35,10 @@
                                         );
                                 }                
                         }
-                        document.querySelector("body").write('\<script src="/bower_components/webcomponentsjs/webcomponents-loader.js"\>\</script\>');
+                        document.getElementsByTagName("body").append('\<script src="/bower_components/webcomponentsjs/webcomponents-loader.js"\>\</script\>');
                 }(window.location))
         </script>
         <!-- End Single Page Apps for GitHub Pages -->
-        <!-- <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script> -->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300" rel="stylesheet">
         <link rel="import" href="/src/sit-website/sit-website.html">
         <style>
