@@ -97,7 +97,7 @@
       }
 
       processMarkdown(md) {
-        return md.replace(/([^!]\[.*\])\(([^\/.].*)\)/g, "$1(/doc/$2)")
+        return md.replace(/([^!]\[.*\])\((?!http:\/\/|https:\/\/)([^\/].*)\)/g, "$1(/doc/$2)")
       }
 
       processToc(md, page) {       
