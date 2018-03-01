@@ -108,8 +108,11 @@
       }
 
       processMarkdownAndImages(md) {
-        return this.processMarkdown(md.replace(/\!(\[.*\])\(([^\/.].*)\)/g,
-          "!$1(https://raw.githubusercontent.com/sit-it/sit/master/doc/$2)"));
+        return this.processMarkdown(md
+                .replace(/\!(\[.*\])\(([^\/.].*)\)/g,
+          "!$1(https://raw.githubusercontent.com/sit-it/sit/master/doc/$2)")
+                .replace(/<img src="(?!http:\/\/|https:\/\/)([^\/].*)"/g,
+                        '<img src="https://raw.githubusercontent.com/sit-it/sit/master/doc/$1"'));
       }
 
 
