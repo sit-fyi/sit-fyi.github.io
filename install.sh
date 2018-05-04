@@ -12,7 +12,7 @@ if [ "${os}" == "Linux" ]; then
         os=linux
 fi        
 
-if [ "${os}" == "Dawin" ]; then
+if [ "${os}" == "Darwin" ]; then
         os=macosx
 fi        
 
