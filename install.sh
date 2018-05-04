@@ -6,7 +6,7 @@ get_latest_release() {
 latest_release=$(get_latest_release "${repo}")
 os=$(uname)
 arch=$(uname -m)
-install=$HOME/.sit
+install=$HOME/.sit-install
 
 if [ "${os}" == "Linux" ]; then
         os=linux
