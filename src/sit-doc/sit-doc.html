@@ -67,7 +67,7 @@
         return {
           tocUrl: {
             type: String,
-            value: "https://raw.githubusercontent.com/sit-it/sit/master/doc/toc.md"
+            value: "https://raw.githubusercontent.com/sit-fyi/sit/master/doc/toc.md"
           },
           toc: {
             type: String,
@@ -110,14 +110,14 @@
       processMarkdownAndImages(md) {
         return this.processMarkdown(md
                 .replace(/\!(\[.*\])\(([^\/.].*)\)/g,
-          "!$1(https://raw.githubusercontent.com/sit-it/sit/master/doc/$2)")
+          "!$1(https://raw.githubusercontent.com/sit-fyi/sit/master/doc/$2)")
                 .replace(/<img src="(?!http:\/\/|https:\/\/)([^\/].*)"/g,
-                        '<img src="https://raw.githubusercontent.com/sit-it/sit/master/doc/$1"'));
+                        '<img src="https://raw.githubusercontent.com/sit-fyi/sit/master/doc/$1"'));
       }
 
 
       getPageUrl(page) {
-        return `https://raw.githubusercontent.com/sit-it/sit/master/doc/${page}`;
+        return `https://raw.githubusercontent.com/sit-fyi/sit/master/doc/${page}`;
       }
     }
 

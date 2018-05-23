@@ -1,4 +1,4 @@
-repo=sit-it/sit
+repo=sit-fyi/sit
 get_latest_release() {
         curl --silent "https://api.github.com/repos/$1/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/'
 }
@@ -21,9 +21,9 @@ mkdir -p ${install}
 echo Installing SIT for $(whoami)
 echo Latest available release: ${latest_release}
 echo Downloading sit
-curl -# -L "https://github.com/sit-it/sit/releases/download/${latest_release}/sit-${arch}-${os}" -o "${install}/sit"
+curl -# -L "https://github.com/sit-fyi/sit/releases/download/${latest_release}/sit-${arch}-${os}" -o "${install}/sit"
 echo Downloading sit-web
-curl -# -L "https://github.com/sit-it/sit/releases/download/${latest_release}/sit-web-${arch}-${os}" -o "${install}/sit-web"
+curl -# -L "https://github.com/sit-fyi/sit/releases/download/${latest_release}/sit-web-${arch}-${os}" -o "${install}/sit-web"
 chmod +x ${install}/sit ${install}/sit-web
 
 echo
