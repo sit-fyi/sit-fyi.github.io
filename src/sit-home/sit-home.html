@@ -8,8 +8,8 @@
 
     <style>
       app-header {
-        background-color: #43b3c2;
-        color: #fff;
+        background-color: #ffd67c;
+        color: #000;
       }
 
       app-drawer {
@@ -18,10 +18,12 @@
 
       #logo {
         width: 20vw;
+        max-width: 300px;
       }
 
       #screenshot {
         width: 50vw;
+        max-width: 1000px;
       }
 
 
@@ -40,11 +42,12 @@
       }
 
       paper-button.download {
-        background: skyblue;
+        background: #855b5c;
       }
 
       #download-link {
         text-decoration: none;
+        color: #f9f9f9;
       }
 
     </style>
@@ -53,24 +56,28 @@
       <app-header-layout>
         <app-header slot="header">
           <app-toolbar>
-            <div main-title>SIT Information Tracker</div>
+            <div main-title>SIT: Serverless Information Tracker</div>
             <a href="/doc">Docs</a>
           </app-toolbar>
       </app-header-layout>
       </app-header>
 
       <center style="margin-top: 10pt; margin-bottom: 10pt">
-        <img id="logo" src="/images/hlogo.png">
+        <img id="logo" src="/images/logo.svg">
+        <h1>SIT</h1>
       </center>
 
       <center>
         <h3>
             Serverless Information Tracker
         </h3>
-          <div style="margin-bottom: 5vh">
-            <img id="screenshot" src="https://github.com/sit-fyi/issue-tracking/raw/master/web/documentation/webui_example.png">
-          </div>
-          <paper-button class="download" raised><a id="download-link" href="https://github.com/sit-fyi/sit/releases">Download</a></paper-button>
+        <p style="font-size: 2em; max-width: 1000px">
+        SIT enables decentralized, sporadically connected parties to contribute and process shared information.
+        </p>
+        <div style="margin-bottom: 5vh">
+                <img id="screenshot" src="https://github.com/sit-fyi/issue-tracking/raw/master/web/documentation/webui_example.png">
+        </div>
+        <paper-button class="download" raised><a id="download-link" href="https://github.com/sit-fyi/sit/releases">Download</a></paper-button>
       </center>
 
 
