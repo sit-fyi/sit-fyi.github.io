@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab:300,400,500,600,700');
+
+$brandcolor-main: #ffd67c;
+$brandcolor-light-accent: #857373;
+$brandcolor-dark-accent: #855b5c;
+$brandcolor-light-shades: #f9f9f9;
+$brandcolor-dark-shades: #2a3857;
+
+$primary: $brandcolor-main;
+$success: $brandcolor-light-accent;
+
+$body-background-color: $brandcolor-light-shades;
+
+$family-primary: "Zilla Slab", "sans-serif";
+$family-monospace: "Fira Code", "monospace";
+$text: black;
+
+@import "./node_modules/bulma/bulma";

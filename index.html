@@ -1,62 +1,129 @@
-<!doctype html>
-<html lang="en">
+<html>
+  <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale
+=1, user-scalable=yes">
 
-<head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1, user-scalable=yes">
-        <title>SIT</title>
-        <!-- Start Single Page Apps for GitHub Pages -->
-        <script type="text/javascript">
-                // Single Page Apps for GitHub Pages
-                // https://github.com/rafrex/spa-github-pages
-                // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-                // ----------------------------------------------------------------------
-                // This script checks to see if a redirect is present in the query string
-                // and converts it back into the correct url and adds it to the
-                // browser's history using window.history.replaceState(...),
-                // which won't cause the browser to attempt to load the new url.
-                // When the single page app is loaded further down in this file,
-                // the correct url will be waiting in the browser's history for
-                // the single page app to route accordingly.
-                (function (l) {
-                        if (l.search) {
-                                var q = {};
-                                l.search.slice(1).split('&').forEach(function (v) {
-                                        var a = v.split('=');
-                                        q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-                                });
+    <title>SIT: Serverless Information Tracker</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/styles.css">
 
-                                if (q.p !== undefined) {
+    <style>
+      .navbar {
+        border-bottom: 1px solid lightgray;
+      }
+      .desert {
+        background-image: url("desert.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: local, scroll;
+        padding: 2vh;
+        height: 100vh;
+      }
+      .desert.is-hidden-desktop {
+        background-image: url("desert_tree.jpg");
+        background-size: cover;
+      }
+    </style>
 
-                                        window.history.replaceState(null, null,
-                                                l.pathname.slice(0, -1) + (q.p || '') +
-                                                (q.q ? ('?' + q.q) : '') +
-                                                l.hash
-                                        );
-                                }
-                        }
-                        var script = document.createElement('script')
-                        script.setAttribute('type', 'text/javascript');
-                        script.setAttribute('src', '/bower_components/webcomponentsjs/webcomponents-loader.js');
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+    
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+    
+          // Add a click event on each of them
+          $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+    
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+    
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+    
+            });
+          });
+        }
+});
+</script>
 
-                        document.addEventListener("DOMContentLoaded", function () {
-                                document.body.appendChild(script);
-                        });
-                }(window.location))
-        </script>
-        <!-- End Single Page Apps for GitHub Pages -->
-        <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
-        <link rel="import" href="/src/sit-website/sit-website.html">
-        <style>
-                html {
-                        font-family: 'Zilla Slab', serif;
-                }
-        </style>
-
-</head>
-
-<body>
-        <sit-website></sit-website>
-</body>
-
+  </head>
+  <body class="has-navbar-fixed-top">
+    <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="navigation">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+      </div>
+     <div class="navbar-menu" id="navMenu">
+       <div class="navbar-end">
+          <a class="navbar-item is-inverted" href="https://github.com/sit-fyi/sit/blob/master/doc/toc.md">
+              Documentation
+          </a>
+          <a class="navbar-item is-inverted" href="https://git.sit.fyi/sit">
+              Source code
+          </a>
+        </div>          
+      </div>
+    </nav>
+    <div class="container is-hidden-desktop desert">
+        <div class="columns is-centered">
+          <div class="column is-narrow is-half" style="text-align: center">
+            <img src="logo.svg" style="width: 50vw">
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-three-quarters">
+          <h1 class="title" style="font-weight: 400; font-size: 6vw; text-align: center">
+            <b>S</b>erverless
+            <b>I</b>nformation
+            <b>T</b>racker</h1>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 5vh">
+          <div class="column">
+            <div class="notification" style="opacity: 0.8">
+              <h1 style="font-weight: 500; font-size: larger; text-align: center">
+                  SIT enables decentralized, sporadically connected parties to contribute and process shared information
+              </h1>
+            </div>
+          </div>
+        </div>
+         <div class="columns is-centered" style="margin-top: 10vh; text-align: center">
+          <div class="column">
+            <a href="https://github.com/sit-fyi/sit/releases" class="button is-success is-link is-large">Download</a>
+          </div>
+        </div>
+    </div>
+    <div class="container is-fluid desert is-hidden-mobile">
+        <div class="columns" style="align-items: center">
+          <div class="column is-offset-half">
+          <h1 class="title" style="font-weight: 400; font-size: 4vw"><b>S</b>erverless<br><b>I</b>nformation<br><b>T</b>racker</h1>
+          </div>
+          <div class="column is-one-quarter">
+            <img src="logo.svg" style="width: 100%">
+          </div>
+        </div>
+        <div class="columns" style="margin-top: 5vh">
+          <div class="column is-offset-half">
+            <h1 style="font-size: xx-large; font-weight: 500">
+                SIT enables decentralized, sporadically connected parties to contribute and process shared information
+            </h1>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 10vh">
+          <div class="column is-narrow">
+            <a href="https://github.com/sit-fyi/sit/releases" class="button is-success is-link is-large">Download</a>
+          </div>
+        </div>
+    </div>
+  </body>
 </html>
